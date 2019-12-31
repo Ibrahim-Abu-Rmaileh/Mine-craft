@@ -101,8 +101,8 @@ mineCraft.createTools = () => {
 mineCraft.clickTool = () => {
     document.body.style.cursor = "pointer";
 }
-mineCraft.createStorege = () =>{
-    for (let i = 0; i < 3; i++) {        
+mineCraft.createStorege = () => {
+    for (let i = 0; i < 3; i++) {
         var item = document.createElement('div');
         item.setAttribute('class', 'matirial');
         document.querySelector('.storege').appendChild(item);
