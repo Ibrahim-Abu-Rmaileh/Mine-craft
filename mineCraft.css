@@ -19,9 +19,15 @@ body{
 
 }
 
-.left-side,.right-side{
-    width: 15%;
-    background-color: blue;
+.left-side{
+    display: flex;
+    flex: 5;
+    justify-content: center;
+}
+.right-side{
+    /* width: 20%; */
+    background-color: black;
+    flex: 1;
 }
 
 .map{
