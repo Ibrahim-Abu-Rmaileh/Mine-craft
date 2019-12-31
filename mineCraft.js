@@ -122,7 +122,7 @@ mineCraft.clickTool = (event) => {
         default:        
         mineCraft.currentTool="";
     }
-    return  mineCraft.currentTool;
+    // return  mineCraft.currentTool; // lital don't want us to write return !!!!!!!!!
 }
 
 mineCraft.breakeBlock=(event)=>{
