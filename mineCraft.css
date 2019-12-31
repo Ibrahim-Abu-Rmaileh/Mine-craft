@@ -64,5 +64,13 @@ body {
 .tool {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 2px solid grey;
+    background-color: white;
+    border-radius: 12px;
+    margin: 2px;
+}
+
+.tool:hover {
+    border: 5px solid grey;
+    cursor: pointer;
 }
