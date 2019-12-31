@@ -24,7 +24,7 @@ body {
 
 .right-side {
     /* width: 20%; */
-    background-color: pink;
+    background-color: rgb(235, 6, 44);
     flex: 1;
 }
 
