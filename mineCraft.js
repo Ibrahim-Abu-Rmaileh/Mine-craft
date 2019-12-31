@@ -18,7 +18,7 @@ mineCraft.start = () => {
     mineCraft.createRock();
     mineCraft.creategrass();
     mineCraft.createWood();
-
+    mineCraft.createTools();
 }
 mineCraft.createDiv = () => {
     for (let i = 0; i < mineCraft.mapArray.length; i++) {
@@ -61,7 +61,6 @@ mineCraft.createWood = () => {
 
     }
 }
-
 mineCraft.createCloud = () => {
     document.querySelector('#c1_2').style.backgroundColor = 'white';
     for (let i = 2; i < 3; i++) {
@@ -70,14 +69,24 @@ mineCraft.createCloud = () => {
         }
     }
 }
-
 mineCraft.createRock = () => {
-
     for (let i = 6; i < 7; i++) {
         for (let j = 5; j < 7; j++) {
             document.querySelector(`#c${i}_${j}`).style.backgroundImage = 'url("./images/rocks.jpg")';
         }
     }
+};
+mineCraft.createTools = () =>{
+    for (let i = 0; i < 3; i++) { 
+        var divTool = document.createElement('div');
+        document.querySelector('.tools').appendChild(divTool);
+        divTool.setAttribute('class', 'tool');
+        divTool.style.backgroundPosition = 'center';
+        divTool.style.backgroundSize = 'cover';
+        divTool.style.backgroundImage = `url("./images/${i}.png")`;
+    }
+
+
 }
 
 

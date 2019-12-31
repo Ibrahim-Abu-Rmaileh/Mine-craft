@@ -25,8 +25,11 @@ body {
 
 .right-side {
     /* width: 20%; */
-    background-color: rgb(235, 6, 44);
+    background-color: black;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .map {
@@ -56,4 +59,9 @@ body {
     height: 100%;
     width: 100px;
     background-color: brown;
+}
+.tool{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
 }
