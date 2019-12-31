@@ -98,8 +98,13 @@ mineCraft.createTools = () => {
         divTool.addEventListener('click', mineCraft.clickTool)
     }
 }
-mineCraft.clickTool = () => {
-    document.body.style.cursor = "pointer";    
+mineCraft.clickTool = (e) => {
+       var arrTools = document.querySelectorAll('.tool');
+       for (const tool of arrTools) {
+           tool.style.border = '2px solid grey';
+       };
+    document.body.style.cursor = "crosshair";   
+    e.target.style.border = '5px solid red';
 }
 mineCraft.createStorege = () =>{
     for (let i = 0; i < 3; i++) {        
