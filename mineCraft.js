@@ -16,7 +16,7 @@ for (let i = 0; i < mapArray.length; i++) {
     row.setAttribute('class', 'row');
     document.querySelector('.map').appendChild(row);
     for (let j = 0; j < 10; j++) {
-        // console.log(mapArray);
+        
 
         let block = document.createElement('div');
         block.setAttribute('class', 'block');
