@@ -104,8 +104,13 @@ mineCraft.createTools = () => {
     }
 }
 mineCraft.clickTool = (event) => {
-    
-    document.body.style.cursor = "pointer";    
+    var arrTools = document.querySelectorAll('.tool');
+       for (const tool of arrTools) {
+           tool.style.border = '2px solid grey';
+       };
+    document.body.style.cursor = "crosshair";   
+    event.target.style.border = '5px solid red';
+     
     switch (event.target.id) {
         case "0":
             mineCraft.currentTool="pickaxe";
@@ -123,8 +128,15 @@ mineCraft.clickTool = (event) => {
         mineCraft.currentTool="";
     }
     // return  mineCraft.currentTool; // lital don't want us to write return !!!!!!!!!
+// mineCraft.clickTool = (e) => {
+//        var arrTools = document.querySelectorAll('.tool');
+//        for (const tool of arrTools) {
+//            tool.style.border = '2px solid grey';
+//        };
+//     document.body.style.cursor = "crosshair";   
+//     e.target.style.border = '5px solid red';
+// }
 }
-
 mineCraft.breakeBlock=(event)=>{
     // console.log( event.target.className);
     if(mineCraft.currentTool=="pickaxe"&&event.target.className=="block rock"){
