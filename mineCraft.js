@@ -19,6 +19,8 @@ mineCraft.start = () => {
     mineCraft.creategrass();
     mineCraft.createWood();
     mineCraft.createTools();
+    mineCraft.createStorege();
+
 }
 mineCraft.createDiv = () => {
     for (let i = 0; i < mineCraft.mapArray.length; i++) {
@@ -95,11 +97,17 @@ mineCraft.createTools = () => {
         divTool.style.backgroundImage = `url("./images/${i}.png")`;
         divTool.addEventListener('click', mineCraft.clickTool)
     }
-
-
 }
 mineCraft.clickTool = () => {
     document.body.style.cursor = "pointer";
+}
+mineCraft.createStorege = () =>{
+    for (let i = 0; i < 3; i++) {        
+        var item = document.createElement('div');
+        item.setAttribute('class', 'matirial');
+        document.querySelector('.storege').appendChild(item);
+    }
+
 }
 
 

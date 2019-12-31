@@ -30,6 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .map {
@@ -73,4 +74,10 @@ body {
 .tool:hover {
     border: 5px solid grey;
     cursor: pointer;
+}
+.matirial{
+    border: 1px solid white;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
 }
