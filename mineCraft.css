@@ -1,68 +1,60 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
-
+body {
     margin: 0;
     padding: 0;
 }
 
-.gameContainer{
+.gameContainer {
     display: flex;
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
-
 }
 
-.left-side{
+.left-side {
     display: flex;
     flex: 5;
     justify-content: center;
 }
-.right-side{
+
+.right-side {
     /* width: 20%; */
-    background-color: black;
+    background-color: pink;
     flex: 1;
 }
 
-.map{
-    width: 70%;
+.map {
+    width: 60%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     /* border:1px solid rgb(134, 240, 240); */
 }
 
-.row{
+.row {
     display: flex;
     height: 10%;
     /* margin :1px; */
-   
-   
 }
 
-.block{
+.block {
     height: 100%;
     width: 10%;
     background-color: rgb(134, 240, 240);
     /* border:1px solid rgb(134, 240, 240); */
-    
-
-    
 }
 
-.block:hover{
+.block:hover {
     border: 1px solid white;
     cursor: pointer;
-   
-
 }
-.block2{
+
+.block2 {
     height: 100%;
     width: 100px;
     background-color: brown;
