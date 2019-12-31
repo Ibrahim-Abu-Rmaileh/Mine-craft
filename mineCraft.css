@@ -53,11 +53,7 @@ body {
 
 .block:hover {
     border: 1px solid white;
-<<<<<<< HEAD
     cursor: pointer;	
-=======
-    /* cursor: pointer; */
->>>>>>> 76e131e45760b113eb2758b5682d92fc2ff911ad
 }
 
 .block2 {
