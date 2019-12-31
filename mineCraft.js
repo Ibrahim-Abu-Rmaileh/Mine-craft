@@ -13,6 +13,7 @@ mineCraft.mapArray = [
 ];
 mineCraft.start = () => {
     mineCraft.createDiv();
+    mineCraft.createGround();
 }
 mineCraft.createDiv = () => {
     for (let i = 0; i < mineCraft.mapArray.length; i++) {
@@ -29,7 +30,14 @@ mineCraft.createDiv = () => {
             row.appendChild(block);
         }
     }
-
 }
+mineCraft.createGround = () => {
+    for (let i = 7; i < 10; i++) {
+        for (let j = 0; j < mineCraft.mapArray[i].length; j++) {
+            document.querySelector(`#c${i}_${j}`).style.backgroundImage = 'url("./images/dirt.jpg")';
+        }
+    }
+}
+
 
 mineCraft.start();
