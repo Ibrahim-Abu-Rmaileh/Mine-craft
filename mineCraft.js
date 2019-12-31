@@ -11,6 +11,9 @@ mineCraft.mapArray = [
     [],
     []
 ];
+
+mineCraft.currentTool="";
+
 mineCraft.start = () => {
     mineCraft.createDiv();
     mineCraft.createGround();
@@ -35,6 +38,7 @@ mineCraft.createDiv = () => {
             mineCraft.mapArray[i].push(j);
             block.setAttribute('id', "c" + i + "_" + j);
             row.appendChild(block);
+            block.addEventListener('click',mineCraft.breakeBlock);
         }
     }
 }
@@ -95,12 +99,53 @@ mineCraft.createTools = () => {
         divTool.style.backgroundPosition = 'center';
         divTool.style.backgroundSize = 'cover';
         divTool.style.backgroundImage = `url("./images/${i}.png")`;
+        divTool.setAttribute('id',`${i}`);
         divTool.addEventListener('click', mineCraft.clickTool)
     }
 }
-mineCraft.clickTool = () => {
+mineCraft.clickTool = (event) => {
+    
     document.body.style.cursor = "pointer";    
+    switch (event.target.id) {
+        case "0":
+            mineCraft.currentTool="pickaxe";
+            console.log("pickaxe");
+            break;
+        case "1":
+            mineCraft.currentTool="axe";
+            console.log("axe");
+            break;
+        case "2": 
+             mineCraft.currentTool="shovel";
+             console.log("shovel");
+            break; 
+        default:        
+        mineCraft.currentTool="";
+    }
+    return  mineCraft.currentTool;
 }
+
+mineCraft.breakeBlock=(event)=>{
+    // console.log( event.target.className);
+    if(mineCraft.currentTool=="pickaxe"&&event.target.className=="block rock"){
+        console.log("at this level we know that the break function identify the choosen tool :)");
+        event.target.style.backgroundImage="none";
+    }
+    else if(mineCraft.currentTool=="axe"&&event.target.className=="block wood"){
+        console.log("at this level we know that the break function identify the choosen tool :)");
+        event.target.style.backgroundImage="none";
+    }
+    
+    else if(mineCraft.currentTool=="shovel"&&event.target.className=="block ground"){
+        console.log("at this level we know that the break function identify the choosen tool :)");
+        event.target.style.backgroundImage="none";
+    }
+    
+    
+}
+
+
+
 mineCraft.createStorege = () =>{
     for (let i = 0; i < 3; i++) {        
         var item = document.createElement('div');
