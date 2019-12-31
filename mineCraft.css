@@ -1,0 +1,63 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    margin: 0;
+    padding: 0;
+}
+
+.gameContainer{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+}
+
+.left-side,.right-side{
+    width: 20%;
+    background-color: blue;
+}
+
+.map{
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* border:1px solid rgb(134, 240, 240); */
+}
+
+.row{
+    display: flex;
+    height: 10%;
+    /* margin :1px; */
+   
+   
+}
+
+.block{
+    height: 100%;
+    width: 10%;
+    background-color: rgb(134, 240, 240);
+    /* border:1px solid rgb(134, 240, 240); */
+    
+
+    
+}
+
+.block:hover{
+    border: 1px solid white;
+    cursor: pointer;
+   
+
+}
+.block2{
+    height: 100%;
+    width: 100px;
+    background-color: brown;
+}
