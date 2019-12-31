@@ -25,7 +25,7 @@ body {
 
 .right-side {
     /* width: 20%; */
-    background-color: pink;
+    background-color: rgb(235, 6, 44);
     flex: 1;
 }
 
@@ -34,25 +34,25 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* border:1px solid rgb(134, 240, 240); */
 }
 
 .row {
     display: flex;
     height: 10%;
-    /* margin :1px; */
+  
 }
 
 .block {
     height: 100%;
     width: 10%;
     background-color: rgb(134, 240, 240);
-    /* border:1px solid rgb(134, 240, 240); */
+    
 }
 
 .block:hover {
     border: 1px solid white;
     cursor: pointer;
+    
 }
 
 .block2 {
@@ -60,6 +60,4 @@ body {
     width: 100px;
     background-color: brown;
 }
-.cloud{
-    background-color: white;
-}
+
