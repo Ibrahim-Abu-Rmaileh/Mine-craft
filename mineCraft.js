@@ -99,7 +99,7 @@ mineCraft.createTools = () => {
 
 }
 mineCraft.clickTool = () => {
-    document.body.style.cursor = "pointer";    
+    document.body.style.cursor = "pointer";
 }
 
 
