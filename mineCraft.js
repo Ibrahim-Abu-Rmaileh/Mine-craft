@@ -149,11 +149,11 @@ mineCraft.breakeBlock = (event) => {
         document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
         event.target.style.backgroundImage = "none";
     }
-} else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
-    console.log("at this level we know that the break function identify the choosen tool :)");
+    else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
+        console.log("at this level we know that the break function identify the choosen tool :)");
         document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
         event.target.style.backgroundImage = "none";
-}
+    }
     else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
         console.log("at this level we know that the break function identify the choosen tool :)");
         document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
@@ -176,7 +176,7 @@ mineCraft.createStorege = () => {
     }
 
 }
-mineCraft.clickMatirial = () =>{
+mineCraft.clickMatirial = () => {
     var arrMtirials = document.querySelectorAll('.matirial');
     for (const matirial of arrMtirials) {
         matirial.style.border = '1px solid white';
