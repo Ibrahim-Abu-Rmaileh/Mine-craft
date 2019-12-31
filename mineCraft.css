@@ -60,7 +60,8 @@ body {
     width: 100px;
     background-color: brown;
 }
-.tool{
+
+.tool {
     width: 100px;
     height: 100px;
     border: 1px solid black;

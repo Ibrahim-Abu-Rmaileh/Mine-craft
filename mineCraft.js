@@ -76,8 +76,8 @@ mineCraft.createRock = () => {
         }
     }
 };
-mineCraft.createTools = () =>{
-    for (let i = 0; i < 3; i++) { 
+mineCraft.createTools = () => {
+    for (let i = 0; i < 3; i++) {
         var divTool = document.createElement('div');
         document.querySelector('.tools').appendChild(divTool);
         divTool.setAttribute('class', 'tool');
