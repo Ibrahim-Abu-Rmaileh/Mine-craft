@@ -76,17 +76,21 @@ mineCraft.createRock = () => {
         }
     }
 };
-mineCraft.createTools = () =>{
-    for (let i = 0; i < 3; i++) { 
+mineCraft.createTools = () => {
+    for (let i = 0; i < 3; i++) {
         var divTool = document.createElement('div');
         document.querySelector('.tools').appendChild(divTool);
         divTool.setAttribute('class', 'tool');
         divTool.style.backgroundPosition = 'center';
         divTool.style.backgroundSize = 'cover';
         divTool.style.backgroundImage = `url("./images/${i}.png")`;
+        divTool.addEventListener('click', mineCraft.clickTool)
     }
 
 
+}
+mineCraft.clickTool = () => {
+    document.body.style.cursor = "pointer";    
 }
 
 
