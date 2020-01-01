@@ -138,8 +138,20 @@ mineCraft.breakeBlock = (event) => {
             event.target.style.backgroundImage = "none";
         }
     }
-}
+    // else {
+    //     document.querySelectorAll('.matirial').forEach(element => {
+    //         if (element.style.backgroundImage != 'none') {
+    //             console.log('yes');
 
+    //             event.target.style.backgroundImage = element.style.backgroundImage;
+    //         }
+    //     });
+    //     // for (let i = 0; i < 4; i++) {
+    //     //     if (document.querySelectorAll('.matirial')[i].style.backgroundImage != 'none'){
+    //     //     }
+    //     // }
+    // }
+}
 mineCraft.createStorege = () => {
     for (let i = 0; i < 4; i++) {
         var item = document.createElement('div');
@@ -155,9 +167,12 @@ mineCraft.clickMatirial = () => {
     var arrMtirials = document.querySelectorAll('.matirial');
     for (const matirial of arrMtirials) {
         matirial.style.border = '1px solid white';
-    };
-    event.target.style.border = '5px solid white';
-    document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
+    };    
+    if (event.target.style.backgroundImage != ''){
+        event.target.style.border = '5px solid white';
+        document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
+    }
+
 }
 
 mineCraft.start();
