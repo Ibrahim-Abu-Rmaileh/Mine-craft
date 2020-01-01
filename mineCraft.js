@@ -13,7 +13,7 @@ mineCraft.mapArray = [
 ];
 
 mineCraft.currentTool = "";
-mineCraft.currentMaterial = "";
+
 
 mineCraft.start = () => {
     mineCraft.createDiv();
@@ -161,9 +161,5 @@ mineCraft.clickMatirial = () => {
 }
 
 
-
-mineCraft.addToMap = () => {
-
-}
 
 mineCraft.start();
