@@ -108,7 +108,7 @@ mineCraft.clickTool = (event) => {
     for (const tool of arrTools) {
         tool.style.border = '2px solid grey';
     };
-    document.body.style.cursor = "crosshair";
+    document.body.style.cursor = `url('./images/0${event.target.id}.png'), auto`;
     event.target.style.border = '5px solid red';
 
     switch (event.target.id) {
