@@ -12,7 +12,7 @@ mineCraft.mapArray = [
     []
 ];
 
-mineCraft.currentTool="";
+mineCraft.currentTool = "";
 
 mineCraft.start = () => {
     mineCraft.createDiv();
@@ -38,7 +38,7 @@ mineCraft.createDiv = () => {
             mineCraft.mapArray[i].push(j);
             block.setAttribute('id', "c" + i + "_" + j);
             row.appendChild(block);
-            block.addEventListener('click',mineCraft.breakeBlock);
+            block.addEventListener('click', mineCraft.breakeBlock);
         }
     }
 }
@@ -99,73 +99,89 @@ mineCraft.createTools = () => {
         divTool.style.backgroundPosition = 'center';
         divTool.style.backgroundSize = 'cover';
         divTool.style.backgroundImage = `url("./images/${i}.png")`;
-        divTool.setAttribute('id',`${i}`);
+        divTool.setAttribute('id', `${i}`);
         divTool.addEventListener('click', mineCraft.clickTool)
     }
 }
 mineCraft.clickTool = (event) => {
     var arrTools = document.querySelectorAll('.tool');
-       for (const tool of arrTools) {
-           tool.style.border = '2px solid grey';
-       };
-    document.body.style.cursor = "crosshair";   
+    for (const tool of arrTools) {
+        tool.style.border = '2px solid grey';
+    };
+    document.body.style.cursor = "crosshair";
     event.target.style.border = '5px solid red';
-     
+
     switch (event.target.id) {
         case "0":
-            mineCraft.currentTool="pickaxe";
+            mineCraft.currentTool = "pickaxe";
             console.log("pickaxe");
             break;
         case "1":
-            mineCraft.currentTool="axe";
+            mineCraft.currentTool = "axe";
             console.log("axe");
             break;
-        case "2": 
-             mineCraft.currentTool="shovel";
-             console.log("shovel");
-            break; 
-        default:        
-        mineCraft.currentTool="";
+        case "2":
+            mineCraft.currentTool = "shovel";
+            console.log("shovel");
+            break;
+        default:
+            mineCraft.currentTool = "";
     }
     // return  mineCraft.currentTool; // lital don't want us to write return !!!!!!!!!
-// mineCraft.clickTool = (e) => {
-//        var arrTools = document.querySelectorAll('.tool');
-//        for (const tool of arrTools) {
-//            tool.style.border = '2px solid grey';
-//        };
-//     document.body.style.cursor = "crosshair";   
-//     e.target.style.border = '5px solid red';
-// }
+    // mineCraft.clickTool = (e) => {
+    //        var arrTools = document.querySelectorAll('.tool');
+    //        for (const tool of arrTools) {
+    //            tool.style.border = '2px solid grey';
+    //        };
+    //     document.body.style.cursor = "crosshair";   
+    //     e.target.style.border = '5px solid red';
+    // }
 }
-mineCraft.breakeBlock=(event)=>{
+mineCraft.breakeBlock = (event) => {
     // console.log( event.target.className);
-    if(mineCraft.currentTool=="pickaxe"&&event.target.className=="block rock"){
+    if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
         console.log("at this level we know that the break function identify the choosen tool :)");
-        event.target.style.backgroundImage="none";
+        document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
+        event.target.style.backgroundImage = "none";
     }
-    else if(mineCraft.currentTool=="axe"&&event.target.className=="block wood"){
+    else if (mineCraft.currentTool == "axe" && event.target.className == "block wood") {
         console.log("at this level we know that the break function identify the choosen tool :)");
-        event.target.style.backgroundImage="none";
+        document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
+        event.target.style.backgroundImage = "none";
     }
-    
-    else if(mineCraft.currentTool=="shovel"&&event.target.className=="block ground"){
+    else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
         console.log("at this level we know that the break function identify the choosen tool :)");
-        event.target.style.backgroundImage="none";
+        document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
+        event.target.style.backgroundImage = "none";
     }
-    
-    
+    else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
+        console.log("at this level we know that the break function identify the choosen tool :)");
+        document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
+        event.target.style.backgroundImage = "none";
+    }
+
+
 }
 
 
 
-mineCraft.createStorege = () =>{
-    for (let i = 0; i < 3; i++) {        
+mineCraft.createStorege = () => {
+    for (let i = 0; i < 3; i++) {
         var item = document.createElement('div');
         item.setAttribute('class', 'matirial');
+        item.addEventListener('click', mineCraft.clickMatirial);
+        item.style.cursor = 'pointer';
         document.querySelector('.storege').appendChild(item);
+
     }
 
 }
-
+mineCraft.clickMatirial = () => {
+    var arrMtirials = document.querySelectorAll('.matirial');
+    for (const matirial of arrMtirials) {
+        matirial.style.border = '1px solid white';
+    };
+    event.target.style.border = '5px solid white'
+}
 
 mineCraft.start();
