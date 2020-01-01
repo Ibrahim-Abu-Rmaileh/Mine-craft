@@ -120,35 +120,31 @@ mineCraft.clickTool = (event) => {
     }
 }
 mineCraft.breakeBlock = (event) => {
-    if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
-        document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
+    if (event.target.style.backgroundImage != "none") {
+        if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
+            document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "axe" && event.target.className == "block wood") {
+            document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
+            document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
+            document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
     }
-    else if (mineCraft.currentTool == "axe" && event.target.className == "block wood") {
-        document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
+    else {
+        document.querySelectorAll('.matirial').forEach(element => {
+            if (element.style.backgroundImage != 'none') {
+                event.target.style.backgroundImage = element.style.backgroundImage;
+            }
+        });
     }
-    else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
-        document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
-    }
-    else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
-        document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
-    }
-    // else {
-    //     document.querySelectorAll('.matirial').forEach(element => {
-    //         if (element.style.backgroundImage != 'none') {
-    //             console.log('yes');
-
-    //             event.target.style.backgroundImage = element.style.backgroundImage;
-    //         }
-    //     });
-    //     // for (let i = 0; i < 4; i++) {
-    //     //     if (document.querySelectorAll('.matirial')[i].style.backgroundImage != 'none'){
-    //     //     }
-    //     // }
-    // }
 }
 mineCraft.createStorege = () => {
     for (let i = 0; i < 4; i++) {
@@ -165,8 +161,8 @@ mineCraft.clickMatirial = () => {
     var arrMtirials = document.querySelectorAll('.matirial');
     for (const matirial of arrMtirials) {
         matirial.style.border = '1px solid white';
-    };    
-    if (event.target.style.backgroundImage != ''){
+    };
+    if (event.target.style.backgroundImage != '') {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
     }
