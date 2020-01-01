@@ -120,21 +120,23 @@ mineCraft.clickTool = (event) => {
     }
 }
 mineCraft.breakeBlock = (event) => {
-    if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
-        document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
-    }
-    else if (mineCraft.currentTool == "axe" && event.target.className == "block wood") {
-        document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
-    }
-    else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
-        document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
-    }
-    else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
-        document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
-        event.target.style.backgroundImage = "none";
+    if (event.target.style.backgroundImage != "none") {
+        if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
+            document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "axe" && event.target.className == "block wood") {
+            document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "axe" && event.target.className == "block grass") {
+            document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
+        else if (mineCraft.currentTool == "shovel" && event.target.className == "block ground") {
+            document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
+            event.target.style.backgroundImage = "none";
+        }
     }
 }
 
