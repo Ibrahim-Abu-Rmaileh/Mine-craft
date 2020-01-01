@@ -136,19 +136,19 @@ mineCraft.breakeBlock = (event) => {
         document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
         event.target.style.backgroundImage = "none";
     }
-    // else {
-    //     document.querySelectorAll('.matirial').forEach(element => {
-    //         if (element.style.backgroundImage != 'none') {
-    //             console.log('yes');
+    else {
+        document.querySelectorAll('.matirial').forEach(element => {
+            if (element.style.backgroundImage != 'none') {
+                console.log('yes');
 
-    //             event.target.style.backgroundImage = element.style.backgroundImage;
-    //         }
-    //     });
-    //     // for (let i = 0; i < 4; i++) {
-    //     //     if (document.querySelectorAll('.matirial')[i].style.backgroundImage != 'none'){
-    //     //     }
-    //     // }
-    // }
+                event.target.style.backgroundImage = element.style.backgroundImage;
+            }
+        });
+        // for (let i = 0; i < 4; i++) {
+        //     if (document.querySelectorAll('.matirial')[i].style.backgroundImage != 'none'){
+        //     }
+        // }
+    }
 }
 mineCraft.createStorege = () => {
     for (let i = 0; i < 4; i++) {
