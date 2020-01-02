@@ -166,6 +166,9 @@ mineCraft.clickMatirial = () => {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
     }
+    else{
+        document.body.style.cursor = 'default';
+    }
 
 }
 
