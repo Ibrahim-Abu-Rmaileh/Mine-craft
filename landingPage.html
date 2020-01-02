@@ -15,7 +15,12 @@
     <h1>MineCraft</h1>
     <div id="buttons">
         <button id="instructions" class="button button1">GAME INSTRUCTIONS</button>
-        <button class="button button2">PLAY</button>
+        <button id="play" class="button button2">PLAY</button>
+    </div>
+
+    <div class="buttonsOfLevel" id="buttonsOfLevel">
+        <button class="button button1">LEVEL 1</button>
+        <button class="button button2">LEVEL 2</button>
     </div>
 
     <!-- instractions -->
@@ -68,7 +73,16 @@
             document.querySelector("#buttons").style.display = 'block';
 
         }
+
+        play = () => {
+
+            document.querySelector("#container").style.display = 'none';
+            document.querySelector("#buttons").style.display = 'none';
+            document.querySelector("#buttonsOfLevel").style.display = 'block';
+
+        }
         document.querySelector('#instructions').addEventListener('click', instructions);
+        document.querySelector('#play').addEventListener('click', play);
         document.querySelector('#back-button').addEventListener('click', back);
     </script>
 

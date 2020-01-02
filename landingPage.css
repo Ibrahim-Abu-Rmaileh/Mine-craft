@@ -19,6 +19,13 @@ h1 {
     /* display: none; */
 }
 
+#buttonsOfLevel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
 button {
     width: 550px;
     height: 250px;
