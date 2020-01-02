@@ -138,13 +138,13 @@ mineCraft.breakeBlock = (event) => {
             event.target.style.backgroundImage = "none";
         }
     }
-    else {
-        document.querySelectorAll('.matirial').forEach(element => {
-            if (element.style.backgroundImage != 'none') {
-                event.target.style.backgroundImage = element.style.backgroundImage;
-            }
-        });
-    }
+    // else {
+    //     document.querySelectorAll('.matirial').forEach(element => {
+    //         if (element.style.backgroundImage != 'none') {
+    //             event.target.style.backgroundImage = element.style.backgroundImage;
+    //         }
+    //     });
+    // }
 }
 mineCraft.createStorege = () => {
     for (let i = 0; i < 4; i++) {
