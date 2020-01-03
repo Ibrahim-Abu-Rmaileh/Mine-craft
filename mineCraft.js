@@ -13,6 +13,7 @@ mineCraft.mapArray = [
 ];
 
 mineCraft.currentTool = "";
+mineCraft.currentMatirial = "";
 
 
 mineCraft.start = () => {
@@ -109,6 +110,7 @@ mineCraft.createStorege = () => {
     }
 }
 mineCraft.clickTool = (event) => {
+    mineCraft.currentMatirial = "";
     var arrTools = document.querySelectorAll('.tool');
     for (const tool of arrTools) {
         tool.style.border = '2px solid grey';
@@ -131,8 +133,6 @@ mineCraft.clickTool = (event) => {
     }
 }
 mineCraft.breakeBlock = (event) => {
-    console.log(event.target, "breakBloke");
-
     if (event.target.style.backgroundImage != "none") {
         if (mineCraft.currentTool == "pickaxe" && event.target.className == "block rock") {
             document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
@@ -148,31 +148,49 @@ mineCraft.breakeBlock = (event) => {
             event.target.style.backgroundImage = "none";
         }
     }
-    else {
-        var arrMa = document.querySelectorAll('.matirial');
-        for (const matirial of arrMa) {
-            if (matirial.style.backgroundImage != '') {
-                console.log(event.target);
-
-                event.target.style.backgroundImage = matirial.style.backgroundImage;
-                return
-            }
-            // document.querySelectorAll('.matirial').forEach(element => {
-
-            //     if (element.style.backgroundImage != '') {
-            //         console.log(event.target);
-
-            //         event.target.style.backgroundImage = element.style.backgroundImage;
-            //         return
-            //     }
-            // });
+    // else {
+    if (event.target.style.backgroundImage === "none" || event.target.style.backgroundImage === "") {
+        switch (mineCraft.currentMatirial) {
+            case "rock":
+                event.target.style.backgroundImage = 'url("./images/rocks.jpg")';
+                event.target.setAttribute("class", "block rock");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[0].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[0].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "tree":
+                event.target.style.backgroundImage = 'url("./images/log.jpg")';
+                event.target.setAttribute("class", "block wood");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[1].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[1].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "grass":
+                event.target.style.backgroundImage = 'url("./images/trees.jpg")';
+                event.target.setAttribute("class", "block grass");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[2].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[2].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "ground":
+                event.target.style.backgroundImage = 'url("./images/dirt.jpg")';
+                event.target.setAttribute("class", "block ground");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[3].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[3].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            default:
+                mineCraft.currentMatirial = "";
+            // }
         }
     }
 }
 
 mineCraft.clickMatirial = (e) => {
-    console.log(e.target, "hi");
-
     mineCraft.currentTool = "";
     var arrMtirials = document.querySelectorAll('.matirial');
     for (const matirial of arrMtirials) {
@@ -181,13 +199,29 @@ mineCraft.clickMatirial = (e) => {
     if (event.target.style.backgroundImage != '') {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
+        switch (event.target.id) {
+            case "m0":
+                mineCraft.currentMatirial = "rock";
+                break;
+            case "m1":
+                mineCraft.currentMatirial = "tree";
+                break;
+            case "m2":
+                mineCraft.currentMatirial = "grass";
+                break;
+            case "m3":
+                mineCraft.currentMatirial = "ground";
+                break;
+            default:
+                mineCraft.currentMatirial = "";
+        }
     }
     else {
         document.body.style.cursor = 'default';
-
     }
-
 }
+
+
 const mineCraft2 = {};
 mineCraft2.mapArray2 = [
     [],
@@ -321,6 +355,7 @@ mineCraft2.createStorege = () => {
 }
 
 mineCraft2.clickTool = (event) => {
+    mineCraft2.currentMatirial = "";
     var arrTools = document.querySelectorAll('.tool');
     for (const tool of arrTools) {
         tool.style.border = '2px solid grey';
@@ -343,51 +378,64 @@ mineCraft2.clickTool = (event) => {
     }
 }
 mineCraft2.breakeBlock = (event) => {
-    console.log(event.target, "breakBloke");
-
     if (event.target.style.backgroundImage != "none") {
         if (mineCraft2.currentTool == "pickaxe" && event.target.className == "block rock") {
             document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "axe" && event.target.className == "block wood") {
+        } else if (mineCraft2.currentTool == "axe" && event.target.className == "block wood") {
             document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "axe" && event.target.className == "block grass") {
+        } else if (mineCraft2.currentTool == "axe" && event.target.className == "block grass") {
             document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "shovel" && event.target.className == "block ground") {
+        } else if (mineCraft2.currentTool == "shovel" && event.target.className == "block ground") {
             document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
         }
     }
-    else {
-        var arrMa = document.querySelectorAll('.matirial');
-        for (const matirial of arrMa) {
-            if (matirial.style.backgroundImage != '') {
-                console.log(event.target);
-
-                event.target.style.backgroundImage = matirial.style.backgroundImage;
-                return
-            }
-            // document.querySelectorAll('.matirial').forEach(element => {
-
-            //     if (element.style.backgroundImage != '') {
-            //         console.log(event.target);
-
-            //         event.target.style.backgroundImage = element.style.backgroundImage;
-            //         return
-            //     }
-            // });
+    // else {
+    if (event.target.style.backgroundImage === "none" || event.target.style.backgroundImage === "") {
+        switch (mineCraft2.currentMatirial) {
+            case "rock":
+                event.target.style.backgroundImage = 'url("./images/rocks.jpg")';
+                event.target.setAttribute("class", "block rock");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[0].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[0].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "tree":
+                event.target.style.backgroundImage = 'url("./images/log.jpg")';
+                event.target.setAttribute("class", "block wood");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[1].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[1].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "grass":
+                event.target.style.backgroundImage = 'url("./images/trees.jpg")';
+                event.target.setAttribute("class", "block grass");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[2].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[2].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            case "ground":
+                event.target.style.backgroundImage = 'url("./images/dirt.jpg")';
+                event.target.setAttribute("class", "block ground");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[3].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[3].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
+                break;
+            default:
+                mineCraft2.currentMatirial = "";
+            // }
         }
     }
 }
 
 mineCraft2.clickMatirial = (e) => {
-    console.log(e.target, "hi");
-
     mineCraft2.currentTool = "";
     var arrMtirials = document.querySelectorAll('.matirial');
     for (const matirial of arrMtirials) {
@@ -396,13 +444,27 @@ mineCraft2.clickMatirial = (e) => {
     if (event.target.style.backgroundImage != '') {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
+        switch (event.target.id) {
+            case "m0":
+                mineCraft2.currentMatirial = "rock";
+                break;
+            case "m1":
+                mineCraft2.currentMatirial = "tree";
+                break;
+            case "m2":
+                mineCraft2.currentMatirial = "grass";
+                break;
+            case "m3":
+                mineCraft2.currentMatirial = "ground";
+                break;
+            default:
+                mineCraft2.currentMatirial = "";
+        }
     }
     else {
         document.body.style.cursor = 'default';
-
     }
-
 }
 
-// mineCraft2.start();
-mineCraft.start();
+mineCraft2.start();
+// mineCraft.start();
