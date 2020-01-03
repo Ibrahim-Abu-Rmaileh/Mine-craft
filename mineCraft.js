@@ -154,18 +154,34 @@ mineCraft.breakeBlock = (event) => {
             case "rock":
                 event.target.style.backgroundImage = 'url("./images/rocks.jpg")';
                 event.target.setAttribute("class", "block rock");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[0].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[0].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "tree":
                 event.target.style.backgroundImage = 'url("./images/log.jpg")';
                 event.target.setAttribute("class", "block wood");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[1].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[1].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "grass":
                 event.target.style.backgroundImage = 'url("./images/trees.jpg")';
                 event.target.setAttribute("class", "block grass");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[2].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[2].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "ground":
                 event.target.style.backgroundImage = 'url("./images/dirt.jpg")';
                 event.target.setAttribute("class", "block ground");
+                mineCraft.currentMatirial = '';
+                document.querySelectorAll('.matirial')[3].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[3].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             default:
                 mineCraft.currentMatirial = "";
@@ -382,18 +398,34 @@ mineCraft2.breakeBlock = (event) => {
             case "rock":
                 event.target.style.backgroundImage = 'url("./images/rocks.jpg")';
                 event.target.setAttribute("class", "block rock");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[0].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[0].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "tree":
                 event.target.style.backgroundImage = 'url("./images/log.jpg")';
                 event.target.setAttribute("class", "block wood");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[1].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[1].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "grass":
                 event.target.style.backgroundImage = 'url("./images/trees.jpg")';
                 event.target.setAttribute("class", "block grass");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[2].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[2].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             case "ground":
                 event.target.style.backgroundImage = 'url("./images/dirt.jpg")';
                 event.target.setAttribute("class", "block ground");
+                mineCraft2.currentMatirial = '';
+                document.querySelectorAll('.matirial')[3].style.backgroundImage = '';
+                document.querySelectorAll('.matirial')[3].style.border = '1px solid white';
+                document.body.style.cursor = 'default';
                 break;
             default:
                 mineCraft2.currentMatirial = "";
@@ -432,5 +464,5 @@ mineCraft2.clickMatirial = (e) => {
     }
 }
 
-// mineCraft2.start();
-mineCraft.start();
+mineCraft2.start();
+// mineCraft.start();
