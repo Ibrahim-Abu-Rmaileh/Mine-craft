@@ -147,8 +147,7 @@ mineCraft.breakeBlock = (event) => {
             document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
         }
-    }
-    else {
+    } else {
         var arrMa = document.querySelectorAll('.matirial');
         for (const matirial of arrMa) {
             if (matirial.style.backgroundImage != '') {
@@ -181,8 +180,7 @@ mineCraft.clickMatirial = (e) => {
     if (event.target.style.backgroundImage != '') {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
-    }
-    else {
+    } else {
         document.body.style.cursor = 'default';
 
     }
@@ -349,21 +347,17 @@ mineCraft2.breakeBlock = (event) => {
         if (mineCraft2.currentTool == "pickaxe" && event.target.className == "block rock") {
             document.querySelectorAll('.matirial')[0].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "axe" && event.target.className == "block wood") {
+        } else if (mineCraft2.currentTool == "axe" && event.target.className == "block wood") {
             document.querySelectorAll('.matirial')[1].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "axe" && event.target.className == "block grass") {
+        } else if (mineCraft2.currentTool == "axe" && event.target.className == "block grass") {
             document.querySelectorAll('.matirial')[2].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
-        }
-        else if (mineCraft2.currentTool == "shovel" && event.target.className == "block ground") {
+        } else if (mineCraft2.currentTool == "shovel" && event.target.className == "block ground") {
             document.querySelectorAll('.matirial')[3].style.backgroundImage = event.target.style.backgroundImage;
             event.target.style.backgroundImage = "none";
         }
-    }
-    else {
+    } else {
         var arrMa = document.querySelectorAll('.matirial');
         for (const matirial of arrMa) {
             if (matirial.style.backgroundImage != '') {
@@ -396,8 +390,7 @@ mineCraft2.clickMatirial = (e) => {
     if (event.target.style.backgroundImage != '') {
         event.target.style.border = '5px solid white';
         document.body.style.cursor = `url('./images/${event.target.id}.jpg'), auto`;
-    }
-    else {
+    } else {
         document.body.style.cursor = 'default';
 
     }
