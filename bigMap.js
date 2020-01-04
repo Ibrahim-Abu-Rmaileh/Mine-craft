@@ -244,3 +244,6 @@ mineCraft2.clickMatirial = (e) => {
 }
 
 mineCraft2.start();
+
+
+// TESTING FOR COMMIT
