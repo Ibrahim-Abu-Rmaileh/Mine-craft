@@ -185,7 +185,7 @@ mineCraft.breakeBlock = (event) => {
                 break;
             default:
                 mineCraft.currentMatirial = "";
-            // }
+                // }
         }
     }
 }
@@ -215,8 +215,7 @@ mineCraft.clickMatirial = (e) => {
             default:
                 mineCraft.currentMatirial = "";
         }
-    }
-    else {
+    } else {
         document.body.style.cursor = 'default';
     }
 }
