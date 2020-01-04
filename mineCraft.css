@@ -55,7 +55,8 @@ body {
     border: 1px solid white;
     /* cursor: pointer;	 */
 }
-img{
+
+img {
     width: 100%;
     height: 100%;
 }
@@ -84,4 +85,31 @@ img{
     width: 70px;
     height: 70px;
     margin: 5px;
+}
+
+#newGame {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#newGame:hover {
+    background-color: #4CAF50;
+    color: white;
+    opacity: 1;
+}
+
+button {
+    width: 100px;
+    height: 60px;
+    font-family: 'Audiowide', cursive;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 12px;
+    opacity: 0.5;
 }

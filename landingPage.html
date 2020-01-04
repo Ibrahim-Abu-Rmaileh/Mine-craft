@@ -15,12 +15,7 @@
     <h1>MineCraft</h1>
     <div id="buttons">
         <button id="instructions" class="button button1">GAME INSTRUCTIONS</button>
-        <button id="play" class="button button2">PLAY</button>
-    </div>
-
-    <div class="buttonsOfLevel" id="buttonsOfLevel">
-        <button class="button button1">LEVEL 1</button>
-        <button class="button button2">LEVEL 2</button>
+        <button id="play-button" class="button button2">PLAY</button>
     </div>
 
     <!-- instractions -->
@@ -60,6 +55,18 @@
         <button id="back-button"> BACK</button>
     </div>
 
+
+    <!-- Container2 section -->
+    <div id="container2" class="container2">
+
+        <A HREF="./mineCraft.html"><button id="levelOne" class="button button1">Level 1</button></A>
+        <A HREF="./bigMap.html"><button id="levelTwo" class="button button2">Level 2</button></A>
+        <button id="back-button2"> BACK</button>
+
+    </div>
+
+
+
     <script>
         instructions = () => {
 
@@ -71,20 +78,25 @@
 
             document.querySelector("#container").style.display = 'none';
             document.querySelector("#buttons").style.display = 'block';
+            document.querySelector("#container2").style.display = 'none';
 
         }
-
         play = () => {
-
-            document.querySelector("#container").style.display = 'none';
             document.querySelector("#buttons").style.display = 'none';
-            document.querySelector("#buttonsOfLevel").style.display = 'block';
+            document.querySelector("#container2").style.display = 'block';
 
         }
+
         document.querySelector('#instructions').addEventListener('click', instructions);
         document.querySelector('#play').addEventListener('click', play);
         document.querySelector('#back-button').addEventListener('click', back);
+        document.querySelector('#back-button2').addEventListener('click', back);
+        document.querySelector('#play-button').addEventListener('click', play);
+        document.querySelector('#levelOne').addEventListener('click', level_one);
     </script>
+
+
+    <script src="./mineCraft.js"></script>
 
 
 
