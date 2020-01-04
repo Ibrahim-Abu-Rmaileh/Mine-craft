@@ -61,6 +61,7 @@
 
         <A HREF="./mineCraft.html"><button id="levelOne" class="button button1">Level 1</button></A>
         <A HREF="./bigMap.html"><button id="levelTwo" class="button button2">Level 2</button></A>
+        <button id="back-button2"> BACK</button>
 
     </div>
 
@@ -79,6 +80,7 @@
 
             document.querySelector("#container").style.display = 'none';
             document.querySelector("#buttons").style.display = 'block';
+            document.querySelector("#container2").style.display = 'none';
 
         }
         play = () => {
@@ -89,6 +91,7 @@
       
         document.querySelector('#instructions').addEventListener('click', instructions);
         document.querySelector('#back-button').addEventListener('click', back);
+        document.querySelector('#back-button2').addEventListener('click', back);
         document.querySelector('#play-button').addEventListener('click', play);
         document.querySelector('#levelOne').addEventListener('click', level_one);
 
